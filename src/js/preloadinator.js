@@ -1,13 +1,15 @@
-$.fn.preloadinator = function(options) {
-	'use strict';
+(function($) {
+	$.fn.preloadinator = function(options) {
+		'use strict';
 
-	var settings = $.extend({
-	}, options),
-	preloader = this;
+		var settings = $.extend({
+		}, options),
+		preloader = this;
 
-	$(window).on('load', function() {
-		$(preloader).fadeOut();
-	});
+		$(window).on('load', function() {
+			$(preloader).fadeOut();
+		});
 
-    return this;
-}
+	    return this;
+	}
+(jQuery));
