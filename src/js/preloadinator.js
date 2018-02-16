@@ -4,7 +4,9 @@
 
 		var settings = $.extend({
 			scroll: false,
-			minTime: 0
+			minTime: 0,
+			animation: 'fadeOut',
+			animationDuration: 400
 		}, options),
 		preloader = this,
 		start = new Date().getTime();
@@ -18,9 +20,9 @@
 		}
 
 		function removePreloader() {
-			$(preloader).fadeOut(function() {
+			$(preloader)[settings.animation](settings.animationDuration)(function() {
 				if(settings.scroll === false) { enableScroll(); }
-			});			
+			});		
 		}
 
 		function minTimeElapsed() {
