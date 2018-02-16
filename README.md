@@ -42,7 +42,7 @@ Preloadinator requires the dependencies listed below.
 $('.js-preloader').preloadinator();
 ```
 
-5. Add any additial settings you require
+5. Add any additional settings you require
 
 ```javascript
 $('.js-preloader').preloadinator({
