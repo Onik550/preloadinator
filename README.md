@@ -1,5 +1,5 @@
 # preloadinator
-A super-lightweight preloader plugin, powered by jQuery &amp; CSS ⚡️
+A super-lightweight preloader plugin, powered by jQuery &amp; CSS :zap:
 
 
 ## Dependencies
@@ -51,6 +51,8 @@ $('.js-preloader').preloadinator({
 	animationDuration: 500
 });
 ```
+
+6. Kick back & relax :beer:
 
 ## Settings
 
