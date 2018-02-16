@@ -15,16 +15,18 @@
 			$('body').css('overflow', 'auto');
 		}
 
+		function removePreloader() {
+			$(preloader).fadeOut(function() {
+				if(settings.scroll === false) { enableScroll(); }
+			});			
+		}
+
 		if(settings.scroll === false) {
 			disableScroll();
 		}
 
 		$(window).on('load', function() {
-			$(preloader).fadeOut(function() {
-				if(settings.scroll === false) {
-					enableScroll();
-				}
-			});
+			removePreloader();
 		});
 
 	    return this;
