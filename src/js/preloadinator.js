@@ -3,9 +3,11 @@
 		'use strict';
 
 		var settings = $.extend({
-			scroll: false
+			scroll: false,
+			minTime: 0
 		}, options),
-		preloader = this;
+		preloader = this,
+		start = new Date().getTime();
 
 		function disableScroll() {
 			$('body').css('overflow', 'hidden');
@@ -21,12 +23,30 @@
 			});			
 		}
 
-		if(settings.scroll === false) {
-			disableScroll();
+		function minTimeElapsed() {
+			var now = new Date().getTime(),
+			elapsed = now - start;
+
+			if(elapsed >= settings.minTime) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 
+		if(settings.scroll === false) { disableScroll(); }
+
 		$(window).on('load', function() {
-			removePreloader();
+			if(minTimeElapsed()) {
+				removePreloader();
+			}
+			else {
+				var now = new Date().getTime(),
+				elapsed = now - start;
+
+				setTimeout(removePreloader, settings.minTime - elapsed);
+			}
 		});
 
 	    return this;
