@@ -29,7 +29,7 @@ Preloadinator requires the dependencies listed below.
 }
 ```
 
-3. Add jQuery & preloadinator.min.js right before your closing <body> tag
+3. Add jQuery & preloadinator.min.js right before your closing ```<body>``` tag
 
 ```html
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -57,9 +57,9 @@ $('.js-preloader').preloadinator({
 | Option            | Type     | Default | Description                                                     |
 |-------------------|----------|---------|-----------------------------------------------------------------|
 | scroll            | boolean  | false   | Enable/disable scrolling when the preloader is displayed        |
-| minTime           | integer  | 0       | Minimum amount of time to display preloader                     |
+| minTime           | integer  | 0       | Minimum amount of time to display preloader (in milliseconds)   |
 | animation         | function | fadeOut | Animation used to remove the preloader when the page has loaded |
-| animationDuration | integer  | 400     | Duration of animation                                           |
+| animationDuration | integer  | 400     | Duration of animation (in milliseconds)                         |
 
 
 Happy coding! 🤖
