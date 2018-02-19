@@ -33,7 +33,7 @@ Preloadinator requires the dependencies listed below.
 
 ```html
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="dist/preloadinator.min.js"
+<script src="dist/jquery.preloadinator.min.js"
 ```
 
 4. Initialise your preloadinator preloader & include this into your HTML file
