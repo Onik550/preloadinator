@@ -20,9 +20,9 @@
 		}
 
 		function removePreloader() {
-			$(preloader)[settings.animation](settings.animationDuration)(function() {
+			$(preloader)[settings.animation](settings.animationDuration, function() {
 				if(settings.scroll === false) { enableScroll(); }
-			});		
+			});	
 		}
 
 		function minTimeElapsed() {
