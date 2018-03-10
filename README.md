@@ -36,13 +36,13 @@ Preloadinator requires the dependencies listed below.
 <script src="dist/jquery.preloadinator.min.js"
 ```
 
-4. Initialise your preloadinator preloader & include this into your HTML file
+4. Initialise your preloader & include this into your HTML file
 
 ```javascript
 $('.js-preloader').preloadinator();
 ```
 
-5. Add any additional settings you require
+5. Specify options (if needed)
 
 ```javascript
 $('.js-preloader').preloadinator({
@@ -54,7 +54,7 @@ $('.js-preloader').preloadinator({
 
 6. Kick back & relax :beer:
 
-## Settings
+## Options
 
 | Option            | Type     | Default | Description                                                     |
 |-------------------|----------|---------|-----------------------------------------------------------------|
