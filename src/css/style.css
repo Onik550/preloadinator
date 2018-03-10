@@ -2,10 +2,37 @@ body {
 	margin: 0;
 	text-align: center;
 	background: #0AC2D2;
+	font-family: 'Roboto', sans-serif;
 }
 
 section {
 	min-height: 100vh;
+}
+
+section h1 {
+	margin: 0 0 30px 0;
+	width: 100%;
+	font-size: 40px;
+	font-weight: 400;
+	color: #FFF;
+}
+
+section a {
+	display: inline-block;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #FFF;
+    border-radius: 3px;
+    color: #0AC2D2;
+    background: #FFF;
+}
+
+@media(min-width: 768px) {
+	section h1 {
+		font-size: 60px;
+	}
 }
 
 .flex-center {
