@@ -11,21 +11,21 @@
 		preloader = this,
 		start = new Date().getTime();
 
-		function disableScroll() {
+		$.fn.preloadinator.disableScroll = function() {
 			$('body').css('overflow', 'hidden');
 		}
 
-		function enableScroll() {
+		$.fn.preloadinator.enableScroll = function() {
 			$('body').css('overflow', 'auto');
 		}
 
-		function removePreloader() {
+		$.fn.preloadinator.removePreloader = function() {
 			$(preloader)[settings.animation](settings.animationDuration, function() {
-				if(settings.scroll === false) { enableScroll(); }
+				if(settings.scroll === false) { $.fn.preloadinator.enableScroll(); }
 			});	
 		}
 
-		function minTimeElapsed() {
+		$.fn.preloadinator.minTimeElapsed = function() {
 			var now = new Date().getTime(),
 			elapsed = now - start;
 
@@ -37,17 +37,17 @@
 			}
 		}
 
-		if(settings.scroll === false) { disableScroll(); }
+		if(settings.scroll === false) { $.fn.preloadinator.disableScroll(); }
 
 		$(window).on('load', function() {
-			if(minTimeElapsed()) {
-				removePreloader();
+			if($.fn.preloadinator.minTimeElapsed()) {
+				$.fn.preloadinator.removePreloader();
 			}
 			else {
 				var now = new Date().getTime(),
 				elapsed = now - start;
 
-				setTimeout(removePreloader, settings.minTime - elapsed);
+				setTimeout($.fn.preloadinator.removePreloader, settings.minTime - elapsed);
 			}
 		});
 
