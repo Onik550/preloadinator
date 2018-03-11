@@ -6,23 +6,39 @@
 			scroll: false,
 			minTime: 0,
 			animation: 'fadeOut',
-			animationDuration: 400
+			animationDuration: 400,
+			afterDisableScroll: function() {},
+			afterEnableScroll: function() {},
+			afterRemovePreloader: function() {}
 		}, options),
 		preloader = this,
 		start = new Date().getTime();
 
 		$.fn.preloadinator.disableScroll = function() {
 			$('body').css('overflow', 'hidden');
+
+			if(typeof settings.afterDisableScroll == 'function') {
+				settings.afterDisableScroll.call(this);
+			}
 		}
 
 		$.fn.preloadinator.enableScroll = function() {
 			$('body').css('overflow', 'auto');
+
+			if(typeof settings.afterEnableScroll == 'function') {
+				settings.afterEnableScroll.call(this);
+			}
 		}
 
 		$.fn.preloadinator.removePreloader = function() {
 			$(preloader)[settings.animation](settings.animationDuration, function() {
-				if(settings.scroll === false) { $.fn.preloadinator.enableScroll(); }
-			});	
+				if(settings.scroll === false) { 
+					$.fn.preloadinator.enableScroll(); 
+				}
+				if(typeof settings.afterRemovePreloader == 'function') {
+					settings.afterRemovePreloader.call(this);	
+				}
+			});
 		}
 
 		$.fn.preloadinator.minTimeElapsed = function() {

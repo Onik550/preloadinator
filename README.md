@@ -42,17 +42,7 @@ Preloadinator requires the dependencies listed below.
 $('.js-preloader').preloadinator();
 ```
 
-5. Specify options (if needed)
-
-```javascript
-$('.js-preloader').preloadinator({
-	minTime: 800,
-	animation: slideUp,
-	animationDuration: 500
-});
-```
-
-6. Kick back & relax :beer:
+5. Kick back & relax :beer:
 
 ## Options
 
@@ -62,6 +52,42 @@ $('.js-preloader').preloadinator({
 | minTime           | integer  | 0       | Minimum amount of time to display preloader (in milliseconds)   |
 | animation         | function | fadeOut | Animation used to remove the preloader when the page has loaded |
 | animationDuration | integer  | 400     | Duration of animation (in milliseconds)                         |
+
+Use the options above like so:
+
+```javascript
+$('.js-preloader').preloadinator({
+	scroll: false,
+	minTime: 2000,
+	animation: slideUp,
+	animationDuration: 600
+});
+```
+
+## Callbacks
+
+| Callback             | Description                                                                           |
+|----------------------|---------------------------------------------------------------------------------------|
+| afterDisableScroll   | This callback is fired after scrolling is disabled (if scroll option is set to false) |
+| afterEnableScroll    | This callback is fired after scrolling is enabled (if scroll option is set to false)  |
+| afterRemovePreloader | This callback is fired after the preloader is removed from the view                   | 
+
+Use the callbacks above like so:
+
+```javascript
+$('.js-preloader').preloadinator({
+	afterDisableScroll: function() {
+		alert('Scrolling has just been disabled.');
+	},
+	afterEnableScroll: function() {
+		alert('Scrolling has just been enabled.');
+	},
+	afterRemovePreloader: function() {
+		alert('The preloader has just been removed.');
+	}
+});
+```                  
+
 
 
 Happy coding! 🤖
